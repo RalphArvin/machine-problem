@@ -1,0 +1,156 @@
+//
+//  main.cpp
+//  anothamp1
+//
+//  Created by Julia Sumague on 25/05/2019.
+//  Copyright © 2019 Julia Sumague. All rights reserved.
+//
+
+#include <iostream>
+#include <cstring>
+#include <cmath>
+
+using namespace std;
+int main()
+{
+    //declaration of variables
+        string studentName;
+        int expGrade[9];
+        int skGrade[9];
+        int mpGrade[2];
+        int preGrade[1];
+        int finGrade[1];
+        int expSum, skSum, mpSum, preSum, finSum;
+        double expFinal, skFinal, mpFinal, preFinal, finFinal;
+        float toTrans;
+    
+    //loop for per student
+        cout << "Enter Name of Student: ";
+        cin >> studentName;
+        cout << endl;
+    {
+            //stores and adds up 9 experiment scores
+                expSum = 0;
+                cout << "Enter 9 Experiment Grades: ";
+                for (int e = 0; e < 9; e++)
+                    cin >> expGrade[e];
+                for (int e = 0; e < 9; e++)
+                {
+                    expSum += expGrade[e];
+                }
+
+            //stores 9 skills tests scores
+                skSum = 0;
+                cout << "Enter 9 Skills Test Grades: ";
+                for (int s = 0; s < 9; s++)
+                    cin >> skGrade[s];
+                for (int s = 0; s < 9; s++)
+                {
+                    skSum += skGrade[s];
+                }
+        
+            //stores 2 machine problem scores
+                mpSum = 0;
+                cout << "Enter 2 Machine Problems Grades: ";
+                for (int m = 0; m < 2; m++)
+                    cin >> mpGrade[m];
+                for (int m = 0; m < 2; m++)
+                {
+                    mpSum += mpGrade[m];
+                }
+        
+        
+            //stores prelim exam score
+                preSum = 0;
+                cout << "Enter Preliminary Examination Grade: ";
+                for (int p = 0; p < 1; p++)
+                    cin >> preGrade[p];
+                for (int p = 0; p < 1; p++)
+                {
+                    preSum += preGrade[p];
+                }
+        
+            //stores final exam score
+                finSum = 0;
+                cout << "Enter Final Examination Grade: ";
+                for (int f = 0; f < 1; f++)
+                    cin >> finGrade[f];
+                for (int f = 0; f < 1; f++)
+                {
+                    finSum += finGrade[f];
+                }
+        
+        //computation for percentage
+            expFinal = ((expSum / 900) * 0.10);
+            skFinal = ((skSum / 900) * 0.20);
+            mpFinal = ((mpSum / 200) * 0.20);
+            preFinal = ((preSum / 100) * 0.20);
+            finFinal = ((finSum / 100) * 0.30);
+
+        //display information
+            cout << "Student Name: " << studentName << endl;
+
+        //computation for grade to transmute and transmutation
+            toTrans = ((expFinal + skFinal + mpFinal + preFinal + finFinal) * 100);
+            if (toTrans <= 95.57 && toTrans == 100)
+            {
+                cout << "GPA = 1.00" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 91.12 && toTrans == 95.56)
+            {
+                cout << "GPA = 1.25" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 86.68 && toTrans == 91.11)
+            {
+                cout << "GPA = 1.50" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 82.23 && toTrans == 86.67)
+            {
+                cout << "GPA = 1.75" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 77.79 && toTrans == 82.22)
+            {
+                cout << "GPA = 2.00" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 73.34 && toTrans == 77.78)
+            {
+                cout << "GPA = 2.25" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 68.90 && toTrans == 73.33)
+            {
+                cout << "GPA = 2.50" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 64.45 && toTrans == 68.89)
+            {
+                cout << "GPA = 2.75" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 60.00 && toTrans == 64.44)
+            {
+                cout << "GPA = 3.00" << endl;
+                cout << "PASSED!" << endl;
+            }
+        
+            else if (toTrans <= 59.99)
+            {
+                cout << "GPA = 5.00" << endl;
+                cout << "FAILED!" << endl;
+            }
+    }
+    return 0;
+}
